@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>1. What is creation phase and execution phase?</h3>
+    <h4>creation phase: </h4>
+    <p>Compiler runs through the entire code for 2 time before actually executing the code,</p>
+    <ul>
+        <li>In the first run, It picks all function declarations and stores them in memory with their reference.</li>
+        <li>In the second run, It picks all variables and assign undefined to them. In the event of a conflict between variable and function declaration name then that variable is ignored.</li>
+    </ul>
+    <h4>Execution phase:</h4>
+    <p>Finally, right after the creation phase of an Execution Context comes the execution phase. This is the stage where the actual code execution begins, Variables assigned with values and Functions executed.</p>
+    <hr>
+
+    <h3>2. What are objects in javascript?</h3>
+    <p>In JS, Object is a non-primitive datatypethat allows you to store multiple collection of data in the form of key-value pairs.</p>
+    <h4>1. object literal</h4>
+    <pre>
+        let obj = {
+            name: "Dhoni"
+            age: 43,
+        }
+        console.log(obj.name);
+    </pre>
+    <h4>2. creating instance:</h4>
+    <pre>
+        let obj1 = new Object();
+        obj1.name = "Bhanu";
+        obj1.age = 21,
+    </pre>
+    <h4>3. object constructor</h4>
+    <pre>
+        function Obj(name, age){
+            this.name = name;
+            this.age = age;
+        }
+        let obj1 = new Obj('pavan' , 23)
+        console.log(obj1)
+    </pre>
+    <hr>
+    <h3>3. What are function constructors?</h3>
+    <p>Function is said to be constructor when it is used to initialise and create a instance of class that is also called as 'object'.</p>
+    <ul>
+        <li>It is good practice to follow to keep the first letter of name of function Capital.</li>
+        <li>It uses 'this' and 'new' keyword</li>
+    </ul>
+    <hr>
+    <h3>4. Explain prototypes?</h3>
+    <p>Prototype is itself an object that have prototype object present inside it.</p>
+    <pre>
+        function Student(name, age, rollno){
+            this.name = name;
+            this.age = age;
+            this.rollno = rollno;
+        };
+        let student1 = new Student('Bhanu', 21, 115);
+        let student2 = new Student('pavan', 23, 118);
+        console.log(student1);
+    </pre>
+    <hr>
+    <h3>5. What is prototype chain?</h3>
+    <p>All objects in JavaScript are instances of Object. Objects created using new keyword, inherit from a prototype called Object.prototype. That means all the objects in JavaScript, inherit the properties and methods from Object.prototype. This is called Prototype chaining.</p>
+    <hr>
+    <h3>6. Give an example of inheritance using function constructor.</h3>
+    <p>Inheritance is something when child is inheriting the properties of parent.</p>
+    
+    <pre>
+         function child(name, age){
+        this.name = name;
+        this.age = age;
+    };
+    function description(name, age, id, cls){
+        child.call(this, name, age, id, cls);
+        this.id = id;
+        this.gender = gender;
+    };
+    let student1 = new child('Nithin', 135);
+    let student2 = new description('Maneesh', 134, 115, 'Btech');
+    console.log(student1);
+    console.log(student2);
+    </pre>
+    <hr>
+    <h3>7. What are callbacks?</h3>
+    <p>Function that is passed as an argument to another function is known as allback function. As JS is event driven language which means they don't stop the program from running until they are completed.</p>
+    <pre>
+        function callback(greeting){
+            console.log("congratulations");
+            greeting();
+        };
+        function show(){
+            console.log("hey are you there");
+        };
+        callback(show);
+    </pre>
+</body>
+</html>
